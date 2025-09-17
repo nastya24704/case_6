@@ -93,7 +93,6 @@ def two_vowels(word):
             i += 1
     return word
 
-vowels_en = ['e', 'u', 'y', 'o', 'a', 'i']
 
 def count_syllable(text):
     syllable = 0
@@ -101,10 +100,6 @@ def count_syllable(text):
         if letter in vowels_en:
             syllable += 1
     return syllable
-
-
-text = input()
-words = text.lower().split()
 
 
 def english_syllable(word):
@@ -156,8 +151,6 @@ def average_len(word):
         return word_vowel(text) / count_words(text)
     else:
         return count_syllable(english_syllable(text)) / len(english_syllable(text))
-
-average_sentences = count_words(text) / sentences_in_text(text)
 
 
 def flesh(text):
@@ -212,6 +205,12 @@ def main():
     print(f"{lcl.FLASH_READABILITY_INDEX} {flesh(text)}")
     print(complexity_text(text))
     print("\n".join(polarity_and_objectivity(text)))
+
+
+text = input()
+words = text.lower().split()
+vowels_en = ['e', 'u', 'y', 'o', 'a', 'i']
+average_sentences = count_words(text) / sentences_in_text(text)
 
 
 if __name__ == '__main__':
